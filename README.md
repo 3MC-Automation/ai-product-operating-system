@@ -10,25 +10,53 @@ AI is increasingly used in product work, but often in an ad hoc way. The AI-Assi
 
 This is not a prompt library. The prompts and skills in this repository are reference implementations of a broader methodology.
 
+## Who This Is For
+
+This operating system is for:
+
+- Product Owners and Product Managers turning ambiguous requests into clear product direction
+- Product Operations teams standardizing intake, prioritization, governance, and handoff
+- AI workflow owners who need human review gates and accountable decision records
+- Delivery teams that need product intent clarified before engineering planning begins
+- Leaders who need executive-ready communication without losing the product reasoning behind it
+
+## Start Here
+
+Read these first:
+
+1. [`docs/operating-model.md`](docs/operating-model.md) for the full stage-by-stage workflow.
+2. [`docs/human-governance.md`](docs/human-governance.md) for review gates, approval expectations, and accountability boundaries.
+3. [`docs/vued-risk-framework.md`](docs/vued-risk-framework.md) for the Value, Urgency, Effort, Dependencies, and Risk decision model.
+
+Then review [`docs/artifact-model.md`](docs/artifact-model.md) to understand how outputs move from discovery to recommendation, engineering planning, and executive communication.
+
 ## Operating model
 
 ```text
 Business Problem
-      ↓
+      |
+      v
 Product Discovery
-      ↓
+      |
+      v
 Human Review Gate
-      ↓
+      |
+      v
 Product Recommendation
-      ↓
+      |
+      v
 Human Approval Gate
-      ↓
+      |
+      v
 Engineering Planning
-      ↓
+      |
+      v
 Human + Engineering Review Gate
-      ↓
+      |
+      v
 Executive Communication
-      ↓
+      |
+      v
 Human Final Approval
 ```
 
@@ -40,6 +68,21 @@ Human Final Approval
 | 2. Product Recommendation | Apply VUED + Risk and produce an approved Product plan | Claude: `/vued product plan` | Approved Product Recommendation |
 | 3. Engineering Planning | Translate locked Product strategy into engineering-ready planning | Codex: `engineering-refinement-planner` | Engineering Refinement Package + Workbook |
 | 4. Executive Communication | Translate Product and Engineering work into a business-audience decision artifact | Claude: `engineering-readiness-review` | Engineering Readiness Review |
+
+## Sanitized Example
+
+A team receives an ambiguous request to add AI-assisted decision support to an internal workflow.
+
+The operating system would guide the Product Owner through:
+
+1. Clarifying the business problem, users, constraints, risks, and unknowns.
+2. Applying VUED + Risk to separate urgency from actual product value.
+3. Defining the smallest governed MVP that can be reviewed and validated.
+4. Locking product intent before engineering planning begins.
+5. Translating the approved direction into engineering-ready refinement artifacts.
+6. Preparing executive communication that explains the decision, tradeoffs, open assumptions, and governance controls.
+
+The output is not an automatic decision. It is a reviewable product decision package with human approval gates.
 
 ## Core principles
 
